@@ -2,8 +2,9 @@ require("dotenv").config();
 const express = require("express");
 const fs = require("fs");
 const app = express();
-const port = process.env.port || 3000;
+const port = process.env.PORT || 3000;
 const { registerFont, createCanvas } = require("canvas");
+registerFont('./Roboto-Black.ttf',{family: 'Roboto' })
 let arbitraryRandom = (min, max) => Math.random() * (max - min) + min;
 let randomRotation = (degrees = 10) =>
   (arbitraryRandom(-degrees, degrees) * Math.PI) / 180;
@@ -56,7 +57,7 @@ app.get("/img", (req, res) => {
     cv.lineWidth = 3;
     cv.stroke();
     cv.fillStyle = "#" + makenumber(3);
-    cv.font = "33px Roboto";
+    cv.font = "30px Roboto";
     cv.fillText(code, 15, 35);
     cv.textAlign = "center";
     const buffer = canvas.toBuffer("image/png");
