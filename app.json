@@ -1,0 +1,11 @@
+{
+  "name": "Butthx library captcha",
+  "description": "this api to create image captcha (new member)",
+  "repository": "https://github.com/butthx/privateApi",
+  "env": {
+    "key": {
+      "description": "please save this key (keep this key because it is confidential.)",
+      "required":true
+    }
+  }
+}
